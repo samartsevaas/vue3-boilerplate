@@ -1,0 +1,50 @@
+@use "../helpers" as *;
+
+/*  Change or add new values to 'abstracts/_components'
+    for the aside panel width
+*/
+
+$desktop-colums: 11; // Columns without aside
+$tablet-columns: 3;
+$phone-columns: 1;
+
+.dashboard {
+  display: grid;
+  grid-template-columns: var(--aside-width-base) repeat(11, 1fr);
+  grid-template-rows: var(--header-height) 1fr;
+  min-height: 100vh;
+  @include media("<=phone-wide") {
+    grid-template-columns: repeat($phone-columns, 1fr);
+  }
+  @include media(">phone-wide", "<=tablet-wide") {
+    grid-template-columns: repeat($tablet-columns, 1fr);
+  }
+  @include media("<=tablet-wide") {
+    grid-template-rows: var(--header-height) 1fr var(--aside-height-mobile);
+  }
+}
+
+.dashboard aside {
+  position: fixed;
+  width: var(--aside-width-base);
+  height: var(--aside-height-base);
+  @include media("<=tablet-wide") {
+    bottom: 0;
+    height: var(--aside-height-mobile);
+    width: var(--aside-width-mobile);
+  }
+}
+
+.dashboard header {
+  grid-area: 1 / 2 / 1 / 13;
+  height: var(--header-height);
+  @include media("<=tablet-wide") {
+    grid-area: 1 / 1 / 1 / 13;
+  }
+}
+.dashboard main {
+  grid-area: 2 / 2 / 2 / 13;
+  @include media("<=tablet-wide") {
+    grid-area: 2 / 1 / 2 / 13;
+  }
+}

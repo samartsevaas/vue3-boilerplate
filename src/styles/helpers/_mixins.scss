@@ -1,0 +1,8 @@
+@use "../abstracts/" as *;
+@forward "./media";
+
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+  content: $content;
+  display: $display;
+  position: $pos;
+}

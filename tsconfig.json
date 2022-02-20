@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "/@/*": ["src/*"],
+      "/@api/*": ["src/api/*"],
+      "/@assets/*": ["src/assets/*"],
+      "/@components/*": ["src/components/*"],
+      "/@layouts/*": ["src/layouts/*"],
+      "/@views/*": ["src/views/*"],
+      "/@router/*": ["src/components/*"],
+      "/@store/*": ["src/store/*"],
+      "/@shared/*": ["src/shared/*"],
+      "/@styles/*": ["src/styles/*"]
+    },
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["node_modules"]
+}

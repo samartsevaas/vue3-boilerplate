@@ -1,0 +1,16 @@
+node_modules
+
+# IDE
+.idea
+.vscode
+
+# OS
+.DS_Store
+
+# Files
+*.local
+
+# Project
+build
+cache
+src/env/.env

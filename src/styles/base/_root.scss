@@ -1,0 +1,17 @@
+@use "../abstracts/" as *;
+
+$aside-width-base: 160px;
+
+:root {
+  // Colors sass variables to css variables
+  @each $collection, $values in $colors {
+    @each $key, $value in $values {
+      --color-#{"" + $collection}-#{$key}: #{$value};
+    }
+  }
+
+  // Font families variables to css variables
+  @each $key, $value in $font-families {
+    --font-family-#{$key}: #{$value};
+  }
+}
