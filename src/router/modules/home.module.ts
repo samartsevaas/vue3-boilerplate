@@ -1,17 +1,15 @@
 import { RouteRecordRaw } from "vue-router";
-import Title from "/@/shared/types/Titles.types";
+import PAGE_TITLE from "/@/shared/types/Title.types";
 
-export default {
-  path: "/",
-  component: () => import(/* webpackChunkName: "dashboard-layout" */ "/@layouts/Dashboard.vue"),
-  meta: {
-    title: Title.HOME
-  },
-  children: [
-    {
-      name: "home",
-      path: "",
-      component: () => import(/* webpackChunkName: "home-page" */ "/@views/ViewHome.vue")
-    }
-  ]
-} as RouteRecordRaw;
+const HomeModule = [
+  {
+    name: "home",
+    path: "/",
+    meta: {
+      title: PAGE_TITLE.HOME
+    },
+    component: () => import(/* webpackChunkName: "home-page" */ "/@views/ViewHome.vue")
+  }
+] as RouteRecordRaw[];
+
+export default HomeModule;
