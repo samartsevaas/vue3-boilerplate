@@ -5,12 +5,7 @@
     "sourceType": "module"
   },
   "plugins": ["vue", "@typescript-eslint", "unused-imports"],
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:vue/vue3-recommended",
-    "prettier"
-  ],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:vue/vue3-recommended", "prettier"],
 
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",

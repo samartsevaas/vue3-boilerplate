@@ -12,33 +12,19 @@ class BaseClient {
     return res.data;
   };
 
-  get<T = unknown, R = T>(
-    url: string,
-    config?: AxiosRequestConfig
-  ): Promise<R> {
+  get<T = unknown, R = T>(url: string, config?: AxiosRequestConfig): Promise<R> {
     return this.instance.get<T, R>(url, config);
   }
 
-  post<T = unknown, R = T>(
-    url: string,
-    data?: T,
-    config?: AxiosRequestConfig
-  ): Promise<R> {
+  post<T = unknown, R = T>(url: string, data?: T, config?: AxiosRequestConfig): Promise<R> {
     return this.instance.post<T, R>(url, data, config);
   }
 
-  put<T = unknown, R = T>(
-    url: string,
-    data?: T,
-    config?: AxiosRequestConfig
-  ): Promise<R> {
+  put<T = unknown, R = T>(url: string, data?: T, config?: AxiosRequestConfig): Promise<R> {
     return this.instance.put<T, R>(url, data, config);
   }
 
-  delete<T = unknown, R = T>(
-    url: string,
-    config?: AxiosRequestConfig
-  ): Promise<R> {
+  delete<T = unknown, R = T>(url: string, config?: AxiosRequestConfig): Promise<R> {
     return this.instance.delete<T, R>(url, config);
   }
 }
