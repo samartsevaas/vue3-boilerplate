@@ -56,8 +56,6 @@ Core dependencies:
 
 ### Folders
 
-I advise you to watch as reference - [Folder Structure Conventions](https://github.com/kriasoft/Folder-Structure-Conventions/blob/master/README.md)
-
 **api** - Contains all api call services. Where each service must be inherited from BaseClient.
 
 **views** - Contains all application pages.
