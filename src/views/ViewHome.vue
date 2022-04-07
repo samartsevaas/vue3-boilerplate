@@ -13,7 +13,7 @@ const { isLoading } = todoStore.initialTodos();
 <template>
   <div class="home">
     <h1>Home page</h1>
-    <span v-if="isLoading">loading</span>
-    <pre lang="json">{{ todos }}</pre>
+    <base-loader v-if="isLoading" />
+    <pre v-else lang="yaml">{{ todos }}</pre>
   </div>
 </template>

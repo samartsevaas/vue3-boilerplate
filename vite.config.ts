@@ -1,9 +1,23 @@
 import { defineConfig } from "vite";
 import path from "path";
 import vue from "@vitejs/plugin-vue";
+import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    AutoImport({
+      imports: ["vue", "vue-router"],
+      eslintrc: {
+        enabled: true
+      },
+      dts: path.resolve(__dirname, "./src/declarations/auto-imports.d.ts")
+    }),
+    Components({
+      dts: path.resolve(__dirname, "./src/declarations/components.d.ts")
+    })
+  ],
   root: path.resolve(__dirname, "."),
   build: {
     outDir: "build"
