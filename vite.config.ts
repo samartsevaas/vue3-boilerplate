@@ -42,5 +42,12 @@ export default defineConfig({
       "/@shared": path.resolve(__dirname, "./src/shared"),
       "/@styles": path.resolve(__dirname, "./src/styles")
     }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "/@styles/abstracts/_index.scss" as *; @use "/@styles/helpers/_index.scss" as *;`
+      }
+    }
   }
 });
