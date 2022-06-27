@@ -1,0 +1,23 @@
+node_modules
+
+# IDE
+.idea
+.vscode
+
+# OS
+.DS_Store
+
+# Files
+*.local
+
+# Env
+.env
+
+# Project
+build
+cache
+
+# Auto-import files
+src/declarations/auto-imports.d.ts
+src/declarations/components.d.ts
+.eslintrc-auto-import.json

@@ -1,0 +1,55 @@
+{
+  "private": true,
+  "scripts": {
+    "prepare": "husky install",
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "lint": "eslint --ext .js,.ts,.vue --ignore-path .eslintignore --fix .",
+    "lint:fix": "eslint --ext .js,.ts,.vue --ignore-path .eslintignore --fix .",
+    "format": "prettier --ignore-path .prettierignore . --write",
+    "cm": "lint-staged && cz"
+  },
+  "lint-staged": {
+    "*.{ts,js,vue}": [
+      "yarn run lint:fix",
+      "yarn run format"
+    ],
+    "*.{css,sass,scss,less,json}": [
+      "yarn run format"
+    ]
+  },
+  "dependencies": {
+    "@vueuse/core": "^8.7.3",
+    "@vueuse/integrations": "^8.7.3",
+    "axios": "^0.27.2",
+    "pinia": "^2.0.14",
+    "vue": "^3.2.37",
+    "vue-router": "^4.0.16"
+  },
+  "devDependencies": {
+    "@types/webpack-env": "^1.16.4",
+    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "@typescript-eslint/parser": "^5.23.0",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "eslint-plugin-vue": "^8.7.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.2",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.3",
+    "unplugin-auto-import": "^0.8.8",
+    "unplugin-vue-components": "^0.19.6",
+    "vite": "^2.9.12",
+    "vue-tsc": "^0.37.9"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
